@@ -36,4 +36,4 @@ class Product(object):
         # return self
 
 
-apple = Product(30, 'apple', 3, 'nice', 'money', 'good').add_tax(.092).displayAll()
+apple = Product(1200, 'TV', 3, 'nice', 'money', 'good').add_tax(.092).displayAll()
