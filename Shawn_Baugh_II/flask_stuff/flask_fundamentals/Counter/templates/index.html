@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Counter</title>
+    </head>
+    <body>
+        <h1>Countin Numbas</h1>
+        <p>{{ session['count'] }}</p>
+        <form action="/button" method="post">
+            <button type="submit" name="button">Plus 2</button>
+        </form>
+        <form action="/reset" method="post">
+            <button type="/reset" name="reset">Resest</button>
+        </form>
+    </body>
+</html>
