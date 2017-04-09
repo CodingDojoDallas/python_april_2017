@@ -1,9 +1,9 @@
 body {
 	width: 900px;
-	background-color: red;
+	background-color: 
 }
 
-/*span {
+span {
 	border: 1px solid black;
 }
 
@@ -16,6 +16,15 @@ body {
 }
 
 .activities {
-	
-}*/
+	border: 1px solid black;
+	height: 120px;
+	overflow-y: scroll;
+}
 
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
