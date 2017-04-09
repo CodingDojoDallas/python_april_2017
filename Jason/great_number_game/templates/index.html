@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Great Number Game Assignment</title>
-	<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/stylesheet.css') }}"/>
+	<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='stylesheet.css') }}"/>
 </head>
 <body>
 	<h1>Welcome to the Great Number Game!</h1>
@@ -17,8 +17,8 @@
 	{% endif %}
 	{% if session['status'] == "on the money" %}
 	<div class='onthemoney'>
-		<h1><b>{{ session['randomint'] }} was the</b><br>
-		<b>number!</b></h1>
+		<h1><b>{{ session['randomint'] }} was the</b></h1>
+		<h1><b>number!</b></h1>
 		<a href="/reset"><input type='button' value='Play again'!></a>
 	</div>
 	{% endif %}
