@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey</title>
+    </head>
+    <body>
+
+        <form action="/users" method="post">
+            Your Name:
+            <input type="text" name="name" placeholder="Name">
+            Location:
+            <select name="location">
+                <option>LA</option>
+                <option>The Bay</option>
+                <option>Seattle</option>
+                <option>Dallas</option>
+            </select>
+
+            Favorite Language:
+            <input type="text" name="language" placeholder="Fav Language">
+            Comments (please don't):
+            <textarea name="comments" rows="8" cols="80"></textarea>
+            <button type="submit" name="button" value="create_user">Submit</button>
+        </form>
+
+    </body>
+</html>

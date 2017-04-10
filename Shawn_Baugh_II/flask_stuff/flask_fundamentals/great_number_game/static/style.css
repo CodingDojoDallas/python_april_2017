@@ -1,0 +1,28 @@
+body {
+    background: black;
+}
+div.number_game {
+    background: white;
+    text-align: center;
+}
+
+div.answer {
+    text-align: center;
+    /*height: 200px;*/
+    /*background: pink;*/
+    display: inline-block;
+    /*margin: 5%;*/
+}
+
+div.red {
+    background: red;
+    height: 200px;
+    display: inline-block;
+    padding: 10%;
+}
+div.green {
+    background: green;
+    height: 200px;
+    display: inline-block;
+    padding: 10%;
+}
