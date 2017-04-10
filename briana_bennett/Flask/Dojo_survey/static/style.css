@@ -1,0 +1,25 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	width: 500px;
+	margin: auto;
+	border: 2px solid black;
+	padding: 15px;
+}
+
+p {
+	margin: 5px;
+}
+
+.result {
+	display: inline-block;
+}
+
+li {
+	list-style: none;
+}
+
+
