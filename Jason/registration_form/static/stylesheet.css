@@ -1,0 +1,14 @@
+.empty_field {
+	color: yellow;
+	font-style: bold;
+}
+
+.password_error {
+	color: pink;
+	font-style: bold;
+}
+
+.invalid_name {
+	color: blue;
+	font-style: bold;
+}
