@@ -1,0 +1,35 @@
+div.red {
+	width: 250px;
+	height: 250px;
+	background-color: red;
+	margin: auto auto 10px auto;
+	border: 2px solid black;
+}
+
+div.win {
+	background-color: green;
+	margin: auto auto 10px auto;
+	width: 250px;
+	height: 250px;
+	font-size: 20px;
+	border: 2px solid black;
+}
+
+body {
+	margin: auto;
+	text-align: center;
+}
+
+.container {
+	margin: auto;
+	text-align: center;
+}
+
+div.red h1 {
+	line-height: 210px;
+}
+
+div.win h1 {
+	padding-top: 5px;
+	line-height: 50px;
+}

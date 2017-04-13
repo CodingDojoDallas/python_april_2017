@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="{{ url_for ('static', filename = 'style.css') }}"/>
+
+        <title>Number Game</title>
+    </head>
+    <body>
+        <div class="number_game">
+            <h2>Welcome to the Great Number Game</h2>
+            <p>I am thinking of a number between 1 and 100</p>
+            <h2>Take a Guess. Bruh.</h2>
+
+            <div class="answer">
+                {% if red == "That's low bruh" %}
+                <div class="red">
+                    <h1>{{session.red}}</h1>
+                </div>
+                {% endif %}
+
+                {% if red == "That's high bruh" %}
+                <div class="red">
+                    <h1>{{session.red}}</h1>
+                </div>
+                {% endif %}
+
+                {% if red == "Peeeerrrfect" %}
+                <div class="green">
+                    <h1>{{session.red}}</h1>
+                    <form class="reset" action="/reset" method="post">
+                        <input type="submit" name="reset" value="Play Again?">
+                    </form>
+                </div>
+                {% endif %}
+
+                {% if red != "Peeeerrrfect" %}
+                <form action="/guess" method="post">
+                    <input type="text" name="guess" placeholder="Take a Guess">
+
+                    <input type="submit" value="You Sure?">
+                </form>
+
+                {% endif %}
+            </div>
+        </div>
+
+
+
+        <!-- <div class="answer">
+            <h1>{{session.enter}}</h1>
+        </div> -->
+    </body>
+</html>

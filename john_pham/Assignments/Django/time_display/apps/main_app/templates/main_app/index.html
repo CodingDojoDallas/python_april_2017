@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time Display</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+</head>
+<body>
+	<div id="container">
+		<h4>The current time and date:</h4>
+		<div id="timeui">
+			<h1>{{ time }}</h1>
+		</div>
+	</div>
+</body>
+</html>
