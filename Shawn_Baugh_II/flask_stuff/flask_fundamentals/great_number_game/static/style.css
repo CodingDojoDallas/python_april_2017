@@ -8,10 +8,7 @@ div.number_game {
 
 div.answer {
     text-align: center;
-    /*height: 200px;*/
-    /*background: pink;*/
     display: inline-block;
-    /*margin: 5%;*/
 }
 
 div.red {
