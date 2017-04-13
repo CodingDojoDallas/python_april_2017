@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+</head>
+<body>
+	<div id="container">
+    <h4>Thanks for submitting this form! You have submitted this form {{ request.session.count }} times now.</h4>
+    <h3>Submitted Information</h3>
+    <p>Name: {{ request.session.name }}</p>
+    <p>Dojo Location: {{ request.session.location }}</p>
+    <p>Favorite Language: {{ request.session.language }}</p>
+    <p>Comment: {{ request.session.comment }}</p>
+
+    <a href="/" class="submit">Go Back</a>
+	</div>
+</body>
+</html>

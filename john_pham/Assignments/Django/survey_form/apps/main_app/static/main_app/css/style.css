@@ -1,0 +1,26 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  padding: 10px;
+}
+
+label {
+	display: block;
+	margin-bottom: 15px;
+}
+
+textarea {
+  display: block;
+}
+
+.submit {
+  margin-left: 115px;
+}
+
+h3 {
+	text-decoration: underline;
+	margin-bottom: 5px;
+}
