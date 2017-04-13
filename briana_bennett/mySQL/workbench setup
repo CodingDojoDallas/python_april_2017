@@ -1,0 +1,6 @@
+use twitter;
+select * from faves;
+select tweet from tweets
+join users on users.id = tweets.user_id;
+
+I don't think anything joined. 

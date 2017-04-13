@@ -1,0 +1,51 @@
+* {
+	margin: auto;
+	padding: auto;
+}
+
+h1 {
+	width: 40%;
+	text-align: left;
+	margin-top: 20px;
+	margin-bottom: 20px
+}
+
+table {
+    font-family: arial, sans-serif;
+    width: 40%;
+    border: 1px solid #dddddd;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+	background-color: #9c9c9c;
+	border: 1px solid #9c9c9c;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+label {
+	display: block;
+	width: 40%;
+	text-align: left;
+}
+
+label input{
+	display: block;
+	width: 20%;
+	text-align: left;
+}
+
+input {
+	display: block;
+	text-align: right;
+}

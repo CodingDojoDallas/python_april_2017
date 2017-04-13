@@ -1,0 +1,30 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	padding: 50px;
+}
+
+div {
+	text-align: center;
+	vertical-align: center;
+	width: 21%;
+	border: 3px solid black;
+	display: inline-block;
+	padding: 10px;
+	height: 250px;
+	margin: 10px;
+}
+
+.counter {
+	display: block;
+	border: none;
+	height: 50px;
+}
+
+h3 {
+	display: inline-block;
+}
+
