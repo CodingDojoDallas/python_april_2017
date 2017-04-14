@@ -1,0 +1,5 @@
+Open MySQL Workbench.
+Select ,local host server that I’ve already setup.
+Input password.
+Opens text editor.
+Bam.

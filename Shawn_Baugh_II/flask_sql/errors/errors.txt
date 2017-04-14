@@ -1,0 +1,21 @@
+***ERROR 1***
+Traceback (most recent call last):
+  File "server.py", line 4, in <module>
+    mysql = MySQLConnector(app,'friendsdb')
+  File "/Users/shawnbaughcreatives/Desktop/DojoAssignments/Python/python_april_2017/Shawn_Baugh_II/flask_sql/errors/mysqlconnection.py", line 40, in MySQLConnector
+    return MySQLConnection(app, db)
+NameError: global name 'MySQLConnection' is not defined
+*** checked spelling in file***
+
+***ERROR 2***
+OperationalError: (_mysql_exceptions.OperationalError) (2005, "Unknown MySQL server host 'local' (0)")
+***inserted 'host' into 'localhost' text***
+
+***ERROR 3***
+Traceback (most recent call last):
+  File "server.py", line 4, in <module>
+    mysql = MySQLConnector(app,'friendsdb')
+  File "/Users/shawnbaughcreatives/Desktop/DojoAssignments/Python/python_april_2017/Shawn_Baugh_II/flask_sql/errors/mysqlconnection.py", line 40, in MySQLConnector
+    return MySQLConnection(app, db)
+TypeError: __init__() takes exactly 2 arguments (3 given)
+***inserted app into init method***

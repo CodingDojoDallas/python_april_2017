@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Full Friends</title>
+    </head>
+    <body>
+        <h1>Friends</h1>
+        <div class="friends">
+            {% for friend in all_friends: %}
+               <p>Name: {{ friend['name'] }}</p>
+               <p>Age: {{ friend['age'] }}</p>
+               <p>friend_since: {{ friend['friend_since'] }}</p>
+               <hr>
+            {% endfor %}
+        </div>
+
+        <form class="add_friend" action="/process" method="post">
+            <h2>Add a Friend</h2>
+            Name:
+            <input type="text" name="name" placeholder="Name">
+            Age:
+            <input type="number" name="age" placeholder="Age">
+            Friend Since:
+            <input type="date" name="friend_since">
+            <a href="/"><button>Submit</button></a>
+        </form>
+    </body>
+</html>
