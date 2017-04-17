@@ -1,0 +1,38 @@
+/*body{
+    background: pink;
+}*/
+
+div.farm {
+    display: inline-block;
+    margin: 7%;
+    text-align: center;
+}
+div.cave {
+    display: inline-block;
+    margin: 7%;
+    text-align: center;
+}
+div.house {
+    display: inline-block;
+    margin: 7%;
+    text-align: center;
+}
+div.casino {
+    display: inline-block;
+    margin: 7%;
+    text-align: center;
+}
+
+div.activities {
+    border: solid black 2px;
+    height: 250px;
+    overflow: scroll;
+    /*background: black;*/
+}
+
+.red {
+    color: red;
+}
+.green{
+    color: green;
+}

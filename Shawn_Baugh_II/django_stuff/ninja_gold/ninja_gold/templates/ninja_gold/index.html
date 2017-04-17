@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'ninja_gold/css/style.css' %}"media="screen" title="no title" charset="utf-8">
+
+        <title>Ninja Gold</title>
+    </head>
+    <body>
+        <div class="gold_count">
+        </div>
+        <div class="panels">
+            <h3>Your Gold:{{request.session.gold}}</h3>
+            <div class="farm">
+                <h2>Farm</h2>
+                <p>Earns 10-20 gold</p>
+                <form class="submit" action="/farm" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="cave">
+                <h2>Cave</h2>
+                <p>Earns 10-20 gold</p>
+                <form class="submit" action="/cave" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="house">
+                <h2>House</h2>
+                <p>Earns 10-20 gold</p>
+                <form class="submit" action="/house" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="casino">
+                <h2>Casino</h2>
+                <p>Earns 10-20 gold</p>
+                <form class="submit" action="/casino" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+        </div>
+        <div class="activities">
+            {% for activity in request.session.activities %}
+                <p class={{activity.color}}>{{activity.message}}</p>
+            {% endfor %}
+        </div>
+
+    </body>
+</html>
