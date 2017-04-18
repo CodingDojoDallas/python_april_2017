@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ninjas</title>
+	</head>
+	<body>
+		{% if session['color'] == 'orange' %}
+			<img src="{{url_for('static',filename='orange.jpg')}}">
+		
+
+			{% elif session['color'] == 'blue' %}
+				<img src="{{url_for('static',filename='blue.jpg')}}">
+		
+
+			{% elif session['color'] == 'red' %}
+				<img src="{{url_for('static',filename='red.jpg')}}">
+		
+
+			{% elif session['color'] == 'purple' %}
+				<img src="{{url_for('static',filename='purple.jpg')}}">
+		
+
+			{% elif session['color'] == 'all' %}
+				<img src="{{url_for('static',filename='tmnt.png')}}">
+
+			{% else %}
+				<img src="{{url_for('static',filename='notapril.jpg')}}">
+		{% endif %}
+
+
+	</body>
+</html>
