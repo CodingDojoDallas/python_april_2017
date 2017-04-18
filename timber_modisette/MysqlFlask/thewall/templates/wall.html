@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Wall</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/stylesheet.css')}}">
+	</head>
+	<body>
+		<h1>Welcome {{session['name']}}</h1>
+		<form action="/logout" method="POST">
+			<input type="submit" name="logoutbutton" value="Logout">
+		</form>
+		<h1>MESSAGES</h1>
+		<form action="/messages" method="POST">
+			<textarea name="textarea"></textarea>
+			<input type="submit" name="postMessageButton" value="Post Message">
+		</form>
+		<!-- <p>{{messages}}</p> -->
+
+			{% for message in messages %}
+			<h2>Message</h2>
+				<div class="messageBox"><p class="showmessage">{{message['content']}}</p></div>
+				<form action="" method="POST">
+					<input type="submit" name="postcomment" value="Comment">
+					<input type="hidden" name="hiddencomment" value="imnotsureyet">
+				</form>
+			{% endfor %}
+		
+	</body>
+</html>
