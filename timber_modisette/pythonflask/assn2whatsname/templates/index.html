@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Whats My Name?</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/stylesheet.css')}}">
+	</head>
+	<body>
+		<form action="/yourname" method="post">
+			Name: <input type="text" name="name">
+			<input type="submit" value="create user">
+		</form>
+	</body>
+</html>
