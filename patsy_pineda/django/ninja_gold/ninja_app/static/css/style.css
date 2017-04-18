@@ -1,0 +1,36 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	padding: 20px;
+	width: 1050px;
+}
+h2{
+	display: inline-block;
+}
+#gold_amount{
+	border: black 1px solid;
+	width: 30px;
+	height: 20px;
+	padding: 2px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+}
+.houses{
+	border: black 1px solid;
+	width: 195px;
+	height: 165px;
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+}
+#container {
+	border: black 1px solid;
+	width: 938px;
+	height: 150px;
+	margin: 10px;
+	overflow: scroll;
+}
