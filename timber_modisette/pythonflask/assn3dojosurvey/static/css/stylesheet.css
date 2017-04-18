@@ -1,0 +1,52 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+#name {
+
+	margin-right: 20px;
+	font-size: 30px;
+
+
+}
+#dojo {
+	font-size: 25px;
+	margin-right: 14px;
+
+}
+
+#drop1 {
+
+	margin-top: 20px;
+}
+
+#language {
+	font-size: 20px;
+
+}
+
+#drop2 {
+	margin-top: 20px;
+}
+
+textarea {
+
+	width: 230px;
+	height: 80px;
+	margin-top: 20px;
+}
+
+form {
+	border: 2px solid black;
+	padding: 15px;
+	width: 250px;
+	background-color: teal;
+}
+
+
+
+body {
+	padding: 400px;
+}
+
