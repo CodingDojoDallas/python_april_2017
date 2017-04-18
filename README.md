@@ -24,6 +24,9 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 [Python - Lists, Dictionaries, & Tuples](https://www.youtube.com/watch?v=iC85adTb8TM&feature=youtu.be "Arrays, Objects, & ...Tuples") <br>
 [Python OOP - Deck of Cards](https://youtu.be/INHEo8Nn4ds "Python OOP - Deck of Cards") <br>
 [Python Flask - Ninja Gold](https://youtu.be/TkMS86lvOFY "Python Flask - Ninja Gold") <br>
+[Python Django - Landscapes](https://www.youtube.com/watch?v=ngirFK-hFfg "Python Django - Landscapes") <br>
+
+
 
 # Schedule
 Coming Soon...
