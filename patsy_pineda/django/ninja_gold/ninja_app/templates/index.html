@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ninja Gold</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+		<div>
+		<h2>Your Gold:</h2>
+		<div id='gold_amount'>{{request.session.gold}}</div>
+		</div>
+		<div class='houses'>
+			<form action='/process_money' method='post'>
+			 {% csrf_token %}
+				<label>Farm</label>
+				<p>(earns 10-20 gold coins)</p>
+				<input type="hidden" name="house" value="farm">
+				<input type="submit" name="submit" value="Find Gold!">
+			</form>
+		</div >
+		<div class='houses'>
+			<form action='/process_money' method='post'>
+			 {% csrf_token %}
+				<label>Cave</label>
+				<p>(earns 5-10 gold coins)</p>
+				<input type="hidden" name="house" value="cave">
+				<input type="submit" name="submit" value="Find Gold!">
+			</form>
+		</div>
+		<div class='houses'>
+			<form action='/process_money' method='post'>
+			 {% csrf_token %}
+				<label>House</label>
+				<p>(earns 2-5 gold coins)</p>
+				<input type="hidden" name="house" value="house">
+				<input type="submit" name="submit" value="Find Gold!">
+			</form>
+		</div>
+		<div class='houses'>
+			<form action='/process_money' method='post'>
+			 {% csrf_token %}
+				<label>Casino</label>
+				<p>(earns/takes 0-50 gold coins)</p>
+				<input type="hidden" name="house" value="casino">
+				<input type="submit" name="submit" value="Find Gold!">
+			</form>
+		</div>
+		<p>Activities:</p>
+		<div id="container">
+			{% for activity in request.session.activities reversed %}
+				<p>{{activity}} {{time}}</p>
+			{% endfor %}
+		</div>
+	</body>
+</html>
