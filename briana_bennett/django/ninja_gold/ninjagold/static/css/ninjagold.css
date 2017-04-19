@@ -1,0 +1,54 @@
+body {
+	padding: 20px;
+}
+
+div {
+	display: inline-block;
+	width: 24%;
+	height: 250px;
+	border: 3px black solid;
+	text-align: center;
+}
+
+
+div.activities {
+	display: block;
+	height: 150px;
+	width: 100%;
+	border: 3px black solid;
+	overflow: scroll;
+}
+
+div.gold {
+	display: block;
+	border: none;
+	height: 50px;
+	text-align: left;
+}
+
+.gold p, span{
+	display: inline-block;
+	margin: auto;
+}
+
+span {
+	border: 1px solid black;
+	width: 75px;
+	height: 25px;
+	line-height: 25px;
+	padding: 2px;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+
+
+
+
+

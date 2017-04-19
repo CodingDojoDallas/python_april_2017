@@ -1,0 +1,10 @@
+p, h1, form {
+	text-align: center;
+}
+
+h1 {
+	border: 3px black solid;
+	width: 20%;
+	margin: auto auto 10px auto;
+}
+
