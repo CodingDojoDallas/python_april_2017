@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Results</title>
+    </head>
+    <body>
+        <h5>Thanks for submitting the form</h5>
+        <h5>You've submitted tht form {{request.session.number}} time(s) now.</h5>
+        <h1>Submitted Info</h1>
+        <p>{{request.session.user.name}}</p>
+        <p>{{request.session.user.location}}</p>
+        <p>{{request.session.user.favorite_language}}</p>
+        <p>{{request.session.user.comment}}</p>
+        <a href="/"><button>Go Back Bruh</button></a>
+    </body>
+    <form class="clear" action="/clear" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Clear Me">
+    </form>
+</html>

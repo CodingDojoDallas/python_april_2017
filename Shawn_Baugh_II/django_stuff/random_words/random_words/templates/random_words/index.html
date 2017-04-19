@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Random Words</title>
+    </head>
+    <body>
+        <h1>Random Words</h1>
+        <h6>Random Word Attemt #{{request.session.number}}</h6>
+        <div class="words">
+            <h3>{{request.session.word}}</h3>
+        </div>
+        <form class="button" action="/generate" method="post">
+            {% csrf_token %}
+            <input type="submit" name="Generate">
+        </form>
+
+        <form class="button" action="/clear" method="post">
+            {% csrf_token %}
+            Clear
+            <input type="submit" name="Clear">
+        </form>
+    </body>
+</html>
