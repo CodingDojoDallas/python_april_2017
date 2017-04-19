@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>django start project</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'time_app/css/style.css' %}"/>
+</head>
+<body>
+	<h3>Hello World, your UTC time is:</h3>
+	<h1>{{ time }}</h1>
+</body>
+</html>
