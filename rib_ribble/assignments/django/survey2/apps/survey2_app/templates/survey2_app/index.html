@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hello World</title>
+</head>
+	<!-- <H3>Hello World!</H3> -->
+<body>
+	<form action="/input" method="post">
+		{% csrf_token %}
+		<p>Your Name:</p><input type="text" name="name">
+		<p>Location</p><input type="text" name="location">
+		<p>Favorite Languaage</p><input type="text" name="language">
+		<p>Comment (optional)</p><textarea name="comment"></textarea>
+		<input type="submit">
+	</form>
+	<!-- <h3>Survey</h3> -->
+</body>
+</html>
