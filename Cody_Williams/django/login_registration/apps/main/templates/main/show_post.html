@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="container">
+	{{post}}
+		<h2>{{post.post}}</h2>
+		<p>by {{post.user.name}}</p>
+		<h3>Comments</h3>
+		<form action="/comments/{{post.id}}" method="post">
+			{% csrf_token %}
+			<div>
+				<label>Leave a Comment</label>
+			</div>
+			<div>
+				<textarea name="comment"></textarea>
+			</div>
+			<input type="submit" value="Create Comment">
+		</form>
+		{% for comment in post.comments.all %}
+			<h6>{{comment.user.name}} - {{comment.comment}}</h6>
+		{% endfor %}
+	</div>
+</body>
+</html>

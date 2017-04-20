@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="container">
+		<form action="/posts" method="post">
+			{% csrf_token %}
+			<div>
+				<label>Create a Post</label>
+			</div>
+			<div>
+				<textarea name="post"></textarea>
+			</div>
+			<input type="submit" value="Create Post">
+		</form>
+		{% for post in posts %}
+			<h3><a href="posts/{{post.id}}">{{post.post}}</a>  <span>{{post.likes.all | length}} likes</span></h3>
+			<form action="posts/likes/{{post.id}}" method="post">
+				{% csrf_token %}
+				<input type="submit" value="Like">
+			</form>
+			<p>by {{post.user.name}}</p>
+		{% endfor %}
+	</div>
+</body>
+</html>

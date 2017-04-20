@@ -12,16 +12,16 @@ def login(request):
 		return redirect('/')
 	else:
 		if request.POST.get('email') == '' or request.POST.get('password') == '':
-			messages.error(request, 'GTFO')
+			messages.error(request, 'invalid credentials')
 			return redirect('/')
 		#see if the email is the db
-		user = User.objects.filter(email=request.POST.get('email')).first()
-		if user and bcrypt.checkpw(request.POST.get('password').encode(), user.password.encode()):
-			request.session['user_id'] = user.id
-			return redirect('/success')
-		else:
-			messages.error(request, 'GTFO')
+		check = User.objects.loginUser(request.POST)
+		if check['status'] == False:
+			messages.error(request, check['message'])
 			return redirect('/')
+		else:
+			request.session['user_id'] = check['user'].id
+			return redirect('/success')
 		#if it is verify the password
 
 def createUser(request):
@@ -44,3 +44,55 @@ def createUser(request):
 			request.session['user_id'] = user.id
 			return redirect('/success')
 			#add them to session
+
+def success(request):
+	context = {
+		'posts': Post.objects.select_related('user').all(),
+	}
+	return render(request, 'main/success.html', context)
+
+def createPost(request):
+	if request.method != 'POST':
+		return redirect('/')
+	else:
+		check = Post.objects.validatePost(request.POST)
+		if check['status'] == False:
+			for error in check['errors']:
+				messages.error(request, error)
+		else:
+			Post.objects.create(
+				post=request.POST.get('post'),
+				user=User.objects.get(id=request.session['user_id'])
+			)
+		return redirect('/success')
+
+def likePosts(request, id):
+	if request.method != 'POST':
+		return redirect('/success')
+	else:
+		user = User.objects.get(id=request.session['user_id'])
+		post = Post.objects.get(id=id)
+		post.likes.add(user)
+		return redirect('/success')
+
+def showPosts(request, id):
+	post = Post.objects.get(id=id)
+	context = {
+		'post': post,
+	}
+	return render(request, 'main/show_post.html', context)
+
+def createComment(request, id):
+	user = User.objects.get(id=request.session['user_id'])
+	post = Post.objects.get(id=id)
+	Comment.objects.create(
+		comment=request.POST.get('comment'),
+		user=user,
+		post=post
+	)
+	return redirect('/posts/{}'.format(id))
+
+
+
+
+
