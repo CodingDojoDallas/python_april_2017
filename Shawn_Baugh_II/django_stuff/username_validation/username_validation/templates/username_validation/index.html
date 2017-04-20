@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Username Validation</title>
+    </head>
+    <body>
+        <h1>Valiadate This Bruh</h1>
+        <div class="wrong">
+            {%for message in messages%}
+                <p>{{message}}</p>
+            {%endfor%}
+        </div>
+        <form class="username" action="/process" method="post">
+            {% csrf_token %}
+            Username
+            <input type="text" name="name" placeholder="username">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
