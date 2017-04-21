@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-import re
+import re, bcrypt
 # Create your models here.
 class UserManager(models.Manager):
 	def validateUser(self, post):

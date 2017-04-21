@@ -15,12 +15,21 @@
 			</div>
 			<input type="submit" value="Create Post">
 		</form>
-		{% for post in posts %}
+		<a href="/secrets">Most popular secrets</a>
+		<h2>Recent Secrets</h2>
+		{% for post in recent_posts %}
 			<h3><a href="posts/{{post.id}}">{{post.post}}</a>  <span>{{post.likes.all | length}} likes</span></h3>
+			<p>({{post.created_at|timesince:current_datetime}} ago...)</p>
 			<form action="posts/likes/{{post.id}}" method="post">
 				{% csrf_token %}
 				<input type="submit" value="Like">
 			</form>
+			{% if post.user == current_user %}
+				<form action="/posts/{{post.id}}/delete" method="post">
+					{% csrf_token %}
+					<input type="submit" value="Delete">
+				</form>
+			{% endif %}
 			<p>by {{post.user.name}}</p>
 		{% endfor %}
 	</div>

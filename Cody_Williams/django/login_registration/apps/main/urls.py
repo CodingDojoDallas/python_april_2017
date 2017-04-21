@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^posts/likes/(?P<id>\d+)$', views.likePosts),
     url(r'^posts/(?P<id>\d+)$', views.showPosts),
     url(r'^comments/(?P<id>\d+)$', views.createComment),
-
+    url(r'^posts/(?P<id>\d+)/delete$', views.deletePost),
+    url(r'^secrets$', views.secrets),
 ]
