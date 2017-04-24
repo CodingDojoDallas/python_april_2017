@@ -1,0 +1,4 @@
+Use twitter;
+
+SELECT first_name, last_name, birthday FROM users
+ORDER BY birthday DESC;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Money</title>
+    <!-- <link rel="stylesheet" href="../static/css/style1.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <p>Your Gold: <span>{{ gold_total }}</span></p>
+
+      <div class="box">
+        <h3>Farm</h3>
+        <p>(earns 10 - 20 gold)</p>
+        <form class="gold_form" action="/process_money" method="post">
+          <input type="hidden" name="bldg" value="farm">
+          <input class="submit_but" type="submit" value="Find Gold!">
+        </form>
+      </div>
+
+      <div class="box">
+        <h3>Cave</h3>
+        <p>(earns 5 - 10 gold)</p>
+        <form class="gold_form" action="/process_money" method="post">
+          <input type="hidden" name="bldg" value="cave">
+          <input class="submit_but" type="submit" value="Find Gold!">
+        </form>
+      </div>
+
+      <div class="box">
+        <h3>House</h3>
+        <p>(earns 2 - 5 gold)</p>
+        <form class="gold_form" action="/process_money" method="post">
+          <input type="hidden" name="bldg" value="house">
+          <input class="submit_but" type="submit" value="Find Gold!">
+        </form>
+      </div>
+
+      <div class="box">
+        <h3>Casino</h3>
+        <p>(earns/takes 0 - 50 gold)</p>
+        <form class="gold_form" action="/process_money" method="post">
+          <input type="hidden" name="bldg" value="casino">
+          <input class="submit_but" type="submit" value="Find Gold!">
+        </form>
+      </div>
+
+      <p>Activities:</p>
+      <div class="activity_msgs">
+      {% for activity in activity_msgs %}
+
+        <p class="{{ activity["color"] }}">{{ activity["msg"] }}</p>
+
+      {% endfor %}
+      </div>
+
+      <form class="reset" action="reset" method="post">
+        <input class="submit_but" type="submit" value="Reset">
+      </form>
+
+    </div> <!-- close container div -->
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TMNT Ninjas</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'disappearing_ninjas/css/style1.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <p>Links for: </p>
+      <a href="/ninjas/blue">Leonardo</a>
+      <a href="/ninjas/orange">Michelangelo</a>
+      <a href="/ninjas/purple">Donatello</a>
+      <a href="/ninjas/red">Raphael</a>
+      <a href="/ninjas/yellow">April</a>
+      <!-- <img src="% static 'disappearing_ninjas/img/'|add: img |add:'.jpg' %" alt="TMNT imgs"> -->
+      <img src="{% static img %}" alt="TMNT imgs">
+    </div>
+
+  </body>
+</html>

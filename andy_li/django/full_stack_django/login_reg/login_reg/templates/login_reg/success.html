@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login & Reg | Success</title>
+	{% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static '/login_reg/css/style1.css' %}">
+</head>
+<body>
+	<div class="container">
+		<h2>Success! Welcome, {{ current_user.first_name }}.</h2>
+		<p>Successfully registered (or logged in)!</p>
+		<form action="/logout" method="post">
+			{% csrf_token %}
+			<input type="submit" value="Logout">
+		</form>
+	</div>
+</body>
+</html>

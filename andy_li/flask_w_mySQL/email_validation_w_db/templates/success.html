@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success Page</title>
+  </head>
+  <body>
+    <div class="container">
+      {% with msgs = get_flashed_messages() %}
+        {% if msgs %}
+          {% for msg in msgs %}
+            <p>{{ msg }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <table>
+        <tbody>
+          <th>E-mail Addresses</th>
+          <th>Date created</th>
+          <th></th>
+          {% for email in all_emails: %}
+          <tr>
+            <td>{{ email["email"] }}</td>
+            <td>{{ email["created_at"] }}</td>
+            <td>
+              <form class="del_but" action="/delete/{{ email["id"] }}" method="post">
+                <input type="submit" value="Delete entry">
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  </body>
+</html>

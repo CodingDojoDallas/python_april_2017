@@ -18,19 +18,22 @@
 
 # Part II
 def names2(dict):
-    for key1, val1 in dict.items():
-        count = 0
-        print key1
+    for key, val in dict.items():
+        print key
+        for index in range(0, len(val)):
+            name_str = val[index].values()[0] + " " + val[index].values()[1]
+            print "{} - {} - {}".format(index + 1, name_str, len(name_str) - 1)
 
-        for val_lst in val1:
-            count += 1
-            name_str = ""
-            for key2, val2 in val_lst.items():
-                name_str += (val2 + " ").upper()
+        # for val_lst in val1:
+        #     count += 1
+        #     name_str = ""
+        #     for key2, val2 in val_lst.items():
+        #         name_str += (val2 + " ").upper()
+        #
+        #     name_str_len = len(name_str) - 2
+        #
+        #     print str(count), "-", str(name_str) + "-", str(name_str_len)
 
-            name_str_len = len(name_str) - 2
-
-            print str(count), "-", str(name_str) + "-", str(name_str_len)
 
 
 users = {
