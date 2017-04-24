@@ -1,0 +1,12 @@
+.container {
+  padding: 20px;
+}
+
+label {
+  display: block;
+  width: 200px;
+}
+
+.flash_msg {
+  color: red;
+}

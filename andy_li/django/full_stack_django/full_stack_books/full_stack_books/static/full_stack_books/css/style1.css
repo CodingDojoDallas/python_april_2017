@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  outline: 0;
+}
+
+.container {
+  padding: 20px;
+  background: linear-gradient(yellow, green);
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  color: black;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  width: 200px;
+  height: 30px;
+}
+
+tr:hover {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  margin: 1% 0;
+}
+
+.input_fields {
+  display: table;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#submit_but {
+  display: block;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px gray;
+}

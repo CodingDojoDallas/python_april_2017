@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey Home</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/my_style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <form class="my_form" action="result" method="post">
+        <label>Your Name:
+          <input type="text" name="name" placeholder="Name"></label>
+
+        <label>Dojo Location:
+          <select id="loc_select" name="loc_select">
+            <option>Silicon Valley</option>
+            <option>Seattle</option>
+            <option>Los Angeles</option>
+            <option selected="selected">Dallas</option>
+            <option>Washington DC</option>
+            <option>Chicago</option>
+            <option>Berkeley</option>
+            <option>Orange County</option></select></label>
+
+        <label>Favorite Language:
+          <select id="fav_lang" name="fav_lang">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+            <option selected="selected">Python</option></select></label>
+
+        <label>Comments:
+        <textarea name="comment" rows="5" cols="50"></textarea></label>
+
+        <input id="submit_but" type="submit" name="submit" value="Submit">
+      </form>
+
+      {% with msgs = get_flashed_messages() %}
+        {% if msgs %}
+          {% for msg in msgs %}
+            <p class="flash_msg">{{ msg }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+    </div> <!-- end of container div -->
+
+  </body>
+</html>

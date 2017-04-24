@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  outline: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.container h1 {
+  margin: 20px 0;
+}
+
+.container p:nth-child(3) {
+  margin-bottom: 20px;
+}
+
+.wrong_guess, .correct_guess {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 10px auto;
+}
+
+.wrong_guess p, .correct_guess p {
+  color: white;
+  font-size: 2em;
+  margin-top: 50px;
+}
+
+.wrong_guess {
+  background-color: red;
+}
+
+.correct_guess {
+  background-color: green;
+}
+
+.num_entered {
+  padding: 5px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.submit_but {
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px gray;
+}

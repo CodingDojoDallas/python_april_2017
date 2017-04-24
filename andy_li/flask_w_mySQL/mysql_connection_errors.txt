@@ -1,0 +1,25 @@
+Error:
+'database': wrong_db, # we got db as an argument
+NameError: global name 'wrong_db' is not defined
+
+Solution:
+Correct database name.
+
+----------------------------------------
+Error:
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'wrong_root'@'localhost' (using password: YES)")
+
+Solution:
+Correct username.
+
+----------------------------------------
+Error:
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Solution:
+Correct password.
+
+----------------------------------------
+Error:
+ValueError: invalid literal for int() with base 10: 'wrong_8889'
+Solution:
+Correct port number.

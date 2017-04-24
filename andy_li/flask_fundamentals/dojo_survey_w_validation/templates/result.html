@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Survey Results</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/my_style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h3>Submitted Info</h3>
+      <p><span class="results_label">Name</span>: {{ data["name"] }}</p>
+      <p><span class="results_label">Dojo Location</span>: {{ data["loc_select"] }}</p>
+      <p><span class="results_label">Favorite Language</span>: {{ data["fav_lang"] }}</p>
+      <p><span class="results_label">Comment</span>: {{ data["comment"] }}</p>
+
+      <form class="return_form" action="/" method="get">
+        <input id="submit_but" type="submit" name="go_back" value="Go Back">
+      </form>
+    </div>
+
+  </body>
+</html>

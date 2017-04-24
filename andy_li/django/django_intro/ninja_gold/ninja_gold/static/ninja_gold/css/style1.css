@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  outline: 0;
+}
+
+.container {
+  padding: 20px;
+  background: linear-gradient(yellow, green)
+}
+
+span {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid white;
+  width: 50px;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.submit_but {
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px gray;
+}
+
+.box {
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid white;
+  width: 20%;
+  margin: 1% 2% 1% 0;
+  background: black;
+  color: white;
+}
+
+.box:nth-child(5) {
+  margin-right: 0;
+}
+
+.activity_msgs {
+  padding: 20px;
+  border: 1px solid black;
+  margin: 10px 0;
+  width: 95%;
+  height: 200px;
+  overflow: auto;
+  background-color: white;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}

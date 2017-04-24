@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Secrets | Popular</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/dojo_secrets/css/style1.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Most Popular Secrets...</h2>
+      <a href="/secrets">Back</a>
+
+      {% for post in posts %}
+  			<p>{{ post.post }} {{ post.created_at }}</p>
+        <p>{{ post.likes.all | length }} like(s)</p>
+
+        {% if current_user.id == post.user.id %}
+  				<p>You posted this. <a href="/posts/delete/{{ post.id }}">Delete</a></p>
+  			{% endif %}
+
+  			{% if post.id in liked_post_ids %}
+  				<p>You liked this.</p>
+  			{% endif %}
+        
+  		{% endfor %}
+    </div>
+
+  </body>
+</html>
