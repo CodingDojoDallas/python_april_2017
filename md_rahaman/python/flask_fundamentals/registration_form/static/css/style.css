@@ -1,0 +1,33 @@
+body{
+	font-family: helvetica sans-serif;
+	font-size: 130%;
+}
+
+#messeges{
+	text-align: center;
+}
+
+input{
+	height: 40px;
+	padding: 5px 5px 12px 5px;
+	font-size: 25px;
+	border-radius: 5px;
+	border: 1px solid grey;
+	width: 320px;
+}
+
+label{
+	position: relative;
+	top: 12px;
+	width: 200px;
+	float: left;
+}
+
+#wrapper{
+	width: 550px;
+	margin: 0 auto;
+}
+
+.form-element{
+	margin-bottom: 10px;
+}

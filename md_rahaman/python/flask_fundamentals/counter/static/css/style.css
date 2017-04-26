@@ -1,0 +1,23 @@
+
+*{
+	margin: 0 auto;
+	padding: 0px;
+}
+
+body{
+	text-align: center;
+}
+h1{
+	color: orange;
+	font-size: 100px;
+	font-family: Georgia;
+}
+
+button{
+	width: 70px;
+	height: 30px;
+}
+
+
+
+
