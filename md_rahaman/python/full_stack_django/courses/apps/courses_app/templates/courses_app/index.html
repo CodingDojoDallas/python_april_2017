@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add a student to all bootcamp courses</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'courses_app/index.css' %}">
+</head>
+<body>
+	<div id="add-course">
+		<h1>Add a new course</h1>
+		<form action='/add' method="post">
+			{% csrf_token %}
+			<label for="">Name:</label>
+			<input id="name" type="text" name="name"><br>
+			<label for="">Description:</label>
+			<input id="description" type="text" name="description"><br><br>
+			<input id="submit" type="submit" name="Submit!" value="Add">
+		</form>
+	</div>
+	<div id="book-table'">
+		<table>
+		  <tr>
+		    <th>Course Name</th>
+		    <th>Description</th>
+		    <th>Date Added</th>
+		    <th>Actions</th>
+		  </tr>
+		  {% for course in courses %}
+		    <tr>
+		      <td>{{course.name}}</td>
+		      <td>{{course.description.description}}</td>
+		      <td>{{course.created_at}}</td>
+		      <td>
+		      	<form action='courses/confirm_destroy/{{course.id}}' method="post">
+		      		{% csrf_token %}
+		      		<input type="submit" name="remove" value="Remove">
+		      	</form>
+		      </td>
+
+		    </tr>
+		  {% endfor %}
+		</table>
+	</div>
+
+</body>
+</html>

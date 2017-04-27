@@ -1,0 +1,22 @@
+
+<html>
+	<head>
+		<title>Random World Generator</title>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			h2{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+	<div>
+		<h1>Random Word (attempt#{{request.session.attempts}})</h1>
+		<h2>{{request.session.password}}</h2>
+		<a href="random"><button>Generate</button></a>
+	</div>
+
+	</body>
+</html>

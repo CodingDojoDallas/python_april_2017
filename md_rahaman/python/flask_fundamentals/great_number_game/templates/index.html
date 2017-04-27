@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Great number game</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+	<style type="text/css">
+		{% if session['userkey'] == "Too Low" or session['userkey'] == "Too High" %}
+			#message-box{
+				display: block;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				background-color: blue;
+				margin-top: 20px;
+				color: white;
+			}
+		{% endif %}
+
+		{% if session['userkey'] == "Accurate" %}
+			#message-box1{
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				display: block;
+				background-color: green;
+			}
+		{% endif %}
+
+	</style>
+</head>
+
+	<body>
+		<div id='main'>
+			<h1>Welcome to the Great Number Game!</h1>
+			<h2>I am thinking number between 1 and 100</h2>
+			<h3>Take a guess!</h3>
+			<div id='message-box'>
+				{{session['userkey']}}
+			</div>
+
+			<div id='message-box1'>
+				<p>{{session['random']}} was the number</p>
+
+				<form action='/restart' method='post'>
+					<input type='submit' value='play Again'>
+				</form>
+			</div>
+			
+			<form action='/usernum' method='post'>
+				<input type='number' name='num'>
+				<input type='submit' value='Submit'>
+			</form>
+
+			
+		</div>
+	</body>
+</html>

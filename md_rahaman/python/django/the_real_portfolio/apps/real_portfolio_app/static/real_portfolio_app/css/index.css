@@ -1,0 +1,33 @@
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#wrapper{
+	width: 1130px;
+ 	background-color: #EEEEEE;
+ 	margin: 0px auto;
+}
+
+h1{
+	color: green;
+	padding-top: 20px;
+}
+
+h3{
+	color: orange;
+	margin: 30px;
+}
+
+h1,h3{
+	text-align: center;
+}
+
+.content{
+	display: inline-block;
+	width: 350px;
+	padding: 10px;
+	outline: 1px solid red;
+}
+

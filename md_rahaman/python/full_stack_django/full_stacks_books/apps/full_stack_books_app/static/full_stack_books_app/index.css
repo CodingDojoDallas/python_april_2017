@@ -1,0 +1,74 @@
+
+
+body{
+	background-color: orange;
+}
+
+table{
+	font-family:arial;
+	border-collapse: collapse;
+	width: 50%;
+}
+
+td,th{
+	border: 2px solid #dddddd;
+	text-align: left;
+}
+
+tr:nth-child(even){
+	background-color: white;
+}
+
+#add-book{
+	width: 50%;
+	background-color: #dddddd;
+	font-family: arial;
+}
+#add-book h1{
+	text-align: center;
+	padding-top: 10px;
+}
+
+#inline{
+	display: inline;
+}
+
+#title{
+	width: 98%;
+	display: inline;
+	padding: 2px;
+	font-size: 20px;
+}
+form{
+	padding: 10px;
+}
+
+#category{
+	float: left;
+}
+
+#author{
+	float: right;
+	margin-right: 170px;
+}
+#category-inp{
+	float: left;
+	padding: 2px;
+	font-size: 20px;
+
+}
+
+#author-inp{
+	float: right;
+	padding: 2px;
+	font-size: 20px;
+	margin-right: 10px;
+}
+#submit{
+	padding: 10px;
+}
+
+
+
+
+

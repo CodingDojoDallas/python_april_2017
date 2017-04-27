@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success</title>
+</head>
+	<body>
+		<h1>Welcome {{request.session.user_name}}</h1>
+		<a href="/favorite">Favorite Secrets</a>
+
+		<form action="postSecrets" method="post">
+			{% csrf_token %}
+			<textarea name="secret"></textarea>
+			<input type="submit" value="Post">
+		</form>
+
+		{% for secret in secrets%}
+			<p>{{secret.secret}}</p>
+			<p>{{secret.created_at|timesince:current_datetime}}</p>
+
+			<a href="likes/{{secret.id}}">like</a>
+			<p>{{secret.likes.all | length}}</p>
+			{% if secret.user == current_user%}
+				<a href="deleteSecrets/{{secret.id}}">Delete</a>
+			{% endif %}
+		{% endfor %}
+
+		<a href="/logout">Logout</a>
+	</body>
+</html>

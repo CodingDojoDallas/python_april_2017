@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success</title>
+	<style type="text/css">
+		p{
+			color: green;
+		}
+	</style>
+</head>
+	<body>
+		<h1>Welcome {{request.session.user_name}}</h1>
+		<!-- <h2>List of users in the database</h2> -->
+		<p>Successfully register</p>
+		{% for user in users %}
+			<ul>
+				<li>{{user.email}}</li>
+			</ul>
+		{% endfor %}
+		<a href="/logout">Logout</a>
+	</body>
+</html>

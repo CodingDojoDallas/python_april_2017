@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'full_stack_books_app/index.css' %}">
+</head>
+<body>
+
+	<div id="book-table'">
+		<table>
+		  <tr>
+		    <th>ID</th>
+		    <th>Title</th>
+		    <th>Author</th>
+		    <th>Category</th>
+		  </tr>
+		  {% for book in books %}
+		    <tr>
+		      <td>{{book.id}}</td>
+		      <td>{{book.title}}</td>
+		      <td>{{book.author}}</td>
+		      <td>{{book.category}}</td>
+		    </tr>
+		  {% endfor %}
+		</table>
+	</div>
+
+
+	<div id="add-book">
+		<h1>Add a Book</h1>
+		<form action='/add' method="post">
+			{% csrf_token %}
+			<label id="inline" for="">Title:</label><br>
+			<input id="title" type="text" name="title"><br>
+			<label id="category" for="">Category:</label>
+			<label id="author" for="">Author:</label><br>
+			<input id="category-inp"type="text" name="category">
+			<input type="text" id="author-inp" name="author"><br><br>
+			<input id="submit" type="submit" name="Submit!">
+		</form>
+	</div>
+
+</body>
+</html>
