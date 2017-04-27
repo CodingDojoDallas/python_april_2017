@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title>Username Validatior</title>
+</head>
+<body>
+
+	<h1>The username you entered is valid. Thank you!</h1>
+	<h2>Usernames Entered</h2>
+	{% for user in users%}
+		<p>{{user.name}} {{user.created_at}}</p>
+	{% endfor%}
+
+</body>
+</html>

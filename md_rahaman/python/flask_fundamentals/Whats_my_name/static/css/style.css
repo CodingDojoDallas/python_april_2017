@@ -1,0 +1,17 @@
+
+*{
+	margin: 0 auto px;
+	padding: 0px;
+}
+
+form{
+	margin-top: 100px;
+	color: blue;
+	text-align: center;
+}
+
+#name{
+	width: 500px;
+	height: 50px;
+	text-align: center;
+}

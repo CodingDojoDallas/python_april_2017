@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Survey Form</title>
+	<style type="text/css">
+		h3{
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<h3>Thaks for submitting this form. You have submitted this form {{request.session.attempts}} times so far</h3>
+	<h1>Submitted Information</h1>
+	<p>Name: {{name}}</p>
+	<p>Location: {{location}}</p>
+	<p>Favorite Language: {{favorite_language}}</p>
+	<p>Comment: {{comment}}</p>
+
+</body>
+</html>

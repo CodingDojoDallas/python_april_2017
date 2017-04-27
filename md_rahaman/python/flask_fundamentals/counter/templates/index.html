@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+
+		<h1>Counter</h1>
+		<h2>{{session.counter}}</h2>
+		<a href="/increment">
+			<button>+2</button>
+		</a>
+		
+		<a href="/reset">
+		<button>reset</button>
+		</a>
+</body>
+</html>

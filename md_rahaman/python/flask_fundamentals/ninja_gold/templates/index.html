@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ninja Gold</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+		<script type=text/javascript src="{{url_for('static', filename='js/jquery.js') }}"></script>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+
+	</head>
+
+
+	<body>
+
+		<p>Your gold:</p>
+		<div id='gold'>
+			{{session['gold']}}
+		</div>
+		<div>
+			<form method="post" action="/reset">
+				<input id ='reset' type="submit" name="reset" value='Reset?'>
+			</form>
+
+		</div>
+
+		<div class ='ninja-place' id='farm'>
+			<h2>Farm</h2>
+			<p>(Earns 10-20 golds)</p>
+			<form method="post" action="/process">
+				<input type="hidden" name="action" value="farm">
+				<input type="submit" value="Find Golds">
+			</form>
+
+		</div>
+
+		<div class ='ninja-place' id='cave'>
+			<h2>Cave</h2>
+			<p>(Earns 5-10 golds)</p>
+			<form method="post" action="/process">
+				<input type="hidden" name="action" value="cave">
+				<input type="submit" value="Find Golds">
+			</form>
+
+		</div>
+
+		<div class ='ninja-place' id='house'>
+			<h2>House</h2>
+			<p>(Earns 2-5 golds)</p>
+			<form method="post" action="/process">
+				<input type="hidden" name="action" value="house">
+				<input type="submit" value="Find Golds">
+			</form>
+
+		</div>
+
+		<div class ='ninja-place' id='casino'>
+			<h2>Casino</h2>
+			<p>(Earns/takes 0-50 golds)</p>
+			<form method="post" action="/process">
+				<input type="hidden" name="action" value="casino">
+				<input type="submit" value="Find Golds">
+			</form>
+
+		</div>
+		<p>Activities:</p>
+		<div id='activities'>
+			{% for activity in session['activities'] %}
+				{% if activity['color'] == 'green' %}
+					<p id='green'>
+						{{activity.message}}
+						</br>			
+					</p>
+				{% endif %}
+
+				{% if activity['color'] == 'red' %}
+					<p id='red'>
+						{{activity.message}}
+						</br>			
+					</p>
+				{% endif %}
+			{% endfor %}
+
+		</div>
+
+	</body>
+</html>
