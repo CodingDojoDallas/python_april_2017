@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validationator</title>
+</head>
+<body>
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{ message }}</p>
+		{% endfor %}
+	{% endif %}
+	<table border="1">
+	{% for user in users %}
+		<tr>
+			<td>{{ user.user_name }}</td>
+			<td>{{ user.created_at }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>
