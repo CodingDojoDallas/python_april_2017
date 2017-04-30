@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>dojo Posts</title>
+		<meta charset="utf-8">
+		{% load staticfiles %}
+		<!-- <link rel="stylesheet" type="text/css" href="{% static 'first_app/css/stylesheet.css' %"> -->
+	</head>
+	<body>
+		<h1>Registration</h1>
+		<form action="register" method="POST">
+			{% csrf_token %}
+			<label for="first_name">First Name: <input type="text" name="first_name"></label>
+			<label for="last_name">Last Name: <input type="text" name="last_name"></label>
+			<label for="email">Email: <input type="text" name="email"></label>
+			<label for="password">Password: <input type="password" name="password"></label>
+			<label for="cfp">Confirm Password: <input type="password" name="cf_password"></label>
+			<input type="submit" name="register_button">
+		</form>
+		{% if messages %}
+			{% for message in messages %}
+				<p>{{message}}</p>
+			{% endfor %}
+		{% endif %}
+		<h1>LOGIN</h1>
+		<form action="/login" method="POST">
+			{% csrf_token %}
+			<label for="email">Email: <input type="text" name="email"></label>
+			<label for="password">Password: <input type="password" name="password"></label>
+			<input type="submit" name="login_button" value="Login">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Book Page</title>
+	</head>
+	<body>
+		<h1>Book Page</h1>
+		{% for i in book %}
+		<form action="/addbookreview/{{i.id}}" method="POST">
+		{% endfor %}
+		{% csrf_token%}
+			<label for="book_review">Add a Review: <textarea name="book_review"></textarea></label>
+			<select name="book_rating">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+			<input type="submit" name="add_review_button">
+		</form>
+		<a href="/logout">Logout</a>
+		<a href="/homepage">Home</a>
+		{% for i in book %}
+			<h1>{{i.title}}	</h1>
+			{% for j in i.reviews.all %}
+				<p>Review: {{j.content}}</p>
+				<p>rating: {{j.rating}}</p>
+				{% if current_user == j.user%}
+					<a href="/deletebookreview/{{j.id}}">Delete</a>
+				{% endif %}
+
+				<p>User:<a href="/userprofile/{{j.user.id}}">{{j.user.first_name}}</a></p>
+			{% endfor %}
+		{% endfor %}
+	</body>
+</html>

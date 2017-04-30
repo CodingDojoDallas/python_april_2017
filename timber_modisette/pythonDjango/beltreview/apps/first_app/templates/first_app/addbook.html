@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add book reivew</title>
+</head>
+<body>
+	<h1>Add Book reivew</h1>
+	<a href="/logout">Logout</a>
+	<a href="/homepage">Home</a>
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{message}}</p>
+		{% endfor %}
+	{% endif %}
+	<form action="/createbook" method="POST">
+		{% csrf_token %}
+
+		<label for="book_title">Book Title: <input type="text" name="book_title"></label>
+		<label>new author: <input type="text" name="authorname"></label>
+		<label for="review">Review: <textarea name="review"></textarea></label>
+		<select name="rating">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+		<input type="submit" name="review_button" value="Add Book and Review">
+	</form>	
+</body>
+</html>

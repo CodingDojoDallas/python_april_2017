@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HomePage</title>
+		<meta charset="utf-8">
+		{% load staticfiles%}
+		<link rel="stylesheet" type="text/css" href="{% static 'first_app/css/stylesheet.css' %}">
+
+	</head>
+	<body>
+		<h1>Welcome, {{request.session.name}}</h1>
+		<a href="/logout">Logout</a>
+
+		<h4>Recent Book Reviews:</h4>
+		<a href="/addbook">Add book review</a>
+		{% for i in review %}
+			<p>{{i.book.title}}title</p>
+			<p><a href="/userprofile/{{i.user.id}}">{{i.user.first_name}}</a> says {{i.content}}conent</p>
+			<p>{{i.rating}}rating</p>
+			<p>Posted on {{i.created_at}}</p>
+			{% if i.user == current_user %}
+				<a href="/deletereview/{{i.id}}">Delete</a>
+			{% endif %}
+		{% endfor %}
+
+
+
+		<h2>Other reviewed books</h2>
+		<div id="scroll">
+		{% for book in review %}
+			<p><a href="/book/{{book.book.id}}">{{book.book.title}}</a></p>
+		{% endfor %}
+
+		</div>
+	</body>
+</html>
