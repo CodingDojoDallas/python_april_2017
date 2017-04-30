@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Success</title>
+		<meta charset="utf-8">
+		{% load staticfiles%}
+		<link rel="stylesheet" type="text/css" href="{% static 'first_app/css/stylesheet.css' %}">
+	</head>
+	<body>
+		<h1>Success, welcome {{username}} </h1>
+
+		<a href="/logout">Logout</a>
+
+
+		<form action="/sendEmail" method="POST">
+			<h3>Send Email</h3>
+			{% csrf_token %}
+			<label for="to">To: <input type="text" name="to"></label>
+			<label for="from">From: <input type="text" name="from"></label>
+			<label for="subject">Subject: <input type="text" name="subject"></label>
+			<label for="message">Message: <input type="text" name="message"></label>
+			<input type="submit" name="email_button">
+		</form>
+
+		
+	</body>
+</html>
