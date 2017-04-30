@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Client</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Add A Client</h1>
+	<form action="/addclient" method="POST">
+		{% csrf_token %}
+		<div>
+			<label for="business_name">Business Name: <input type="text" name="business_name"></label>
+		</div>
+		<div>
+			<label for="email">Email: <input type="text" name="email"></label>
+		</div>
+		<div>
+			<label for="phone">Phone#: <input type="number" name="phone"></label>
+		</div>
+		<!-- <div>
+			<label for="note">Notes: <textarea></textarea></label>
+		</div> -->
+		<input type="submit" name="add_client_button">
+	</form>
+	<button><a href="/">Cancel</a></button>
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{message}}</p>
+		{% endfor %}
+	{% endif %}
+</body>
+</html>
