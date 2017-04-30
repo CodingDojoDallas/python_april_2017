@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>User profile</title>
+		<meta charset="utf-8">
+		{% load staticfiles %}
+	</head>
+	<body>
+		<h1>{{user.name}}'s Interests</h1>
+		<div>
+			{% for i in content %}
+				<p>{{i}}</p>
+
+			
+				{% if user.id == current_user.id %}
+					<a href="/delete/{{i}}">Delete</a>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<a href="/show">Back to Users</a>
+		<p></p>
+		<a href="/">Enter another user Interest</a>
+	</body>
+</html>
