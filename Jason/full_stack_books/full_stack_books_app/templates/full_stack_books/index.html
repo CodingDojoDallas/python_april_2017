@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Stack Books</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'full_stack_books/css/stylesheet.css' %}">
+</head>
+<body>
+
+	{% for book in books %}
+	<p>{{book.title}}</p>
+	<p>{{book.author}}</p>
+	<p>{{book.category}}</p>
+	{% endfor %}
+	
+	<table>
+		
+
+
+
+	</table>
+
+
+	
+	<h3>Add a Book</h3>
+	<form action='/add' method='post'>
+		<label>Title:</label><br/>
+		<input class='ip1' type="text" name="title"><br/>
+		<label>Category:</label><br/>
+		<input class='ip2' type="text" name="category"><br/>
+		<label>Author:</label><br/>
+		<input class='ip2' type="text" name="author">
+		<input type="submit" value="Submit">
+		{% csrf_token%}
+	</form>
+</body>
+</html>
