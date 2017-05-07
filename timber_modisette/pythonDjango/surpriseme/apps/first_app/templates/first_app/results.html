@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>results</title>
+	</head>
+	<body>
+		<h1>surprises</h1>
+		<ul>
+		{% for word in request.session.words %}
+			<li>{{word}}</li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>
