@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Time Display</title>
+		<meta charset="utf-8">
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/stylesheet.css' %}"media="screen" title="no title"  charset="utf-8">
+	</head>
+	<body>
+		<div>
+			<h3>The current time and date: </h3>
+		</div>
+		<div>
+			<h1>{{day}}</h1>
+			<h1>{{time}}</h1>
+		</div>
+	</body>
+</html>
