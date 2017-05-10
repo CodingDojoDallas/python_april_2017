@@ -1,0 +1,19 @@
+*{
+	padding: 20px;
+}
+
+
+#email{
+	width: 410px;
+	outline: 1px solid black;
+
+}
+
+#messege{
+	color: green;
+}
+
+ul li{
+	list-style-type: none;
+	display: inline-block;
+}

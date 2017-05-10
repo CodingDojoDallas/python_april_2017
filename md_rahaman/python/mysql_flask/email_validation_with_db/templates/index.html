@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Friends</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+	</head>
+
+	<body>
+		<div id='messege'>
+				{% with messages = get_flashed_messages() %}
+					{%if messages %}
+						{% for message in messages %}
+							<p>{{message}}</p>
+						{% endfor %}
+					{%endif%}
+				{% endwith %}
+		</div>
+
+		<div id="add-email">
+			<form action='/validation' method='POST'>
+			    <label for="email">Email<input type="text" name="email" id="email"></label>
+			    <input type="submit" value="Add">
+			 </form>
+
+		</div>
+		
+
+	</body>
+</html>
