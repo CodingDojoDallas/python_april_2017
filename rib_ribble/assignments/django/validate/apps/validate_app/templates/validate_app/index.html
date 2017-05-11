@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validationator</title>
+</head>
+<body>
+	<h1>Validationator</h1>
+	<h3>Make sure it is more than 8 characters but less than 16!</h3>
+	<form action="/input" method="post">
+	{% csrf_token %}
+	<table border="1">
+	<label>Username:</label><input type="text" name="username"><br>
+	<input type="submit">
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{ message }}</p>
+		{% endfor %}
+	{% endif %}
+	</table>
+	</form>
+</body>
+</html>
