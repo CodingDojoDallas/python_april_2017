@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pops</title>
+    </head>
+    <body>
+        <h1>Most Popular Secrets...</h1>
+        <form class="logout" action="/logout" method="post">
+            {% csrf_token %}
+            <input type="submit"value="logout">
+        </form>
+        <h4><a href="/secrets">Back</a></h4>
+        {%for post in posts%}
+        <div class="recent_secrect">
+            <h3>{{post.post}}</h3>
+            <p>{{post.like.all|length}} Likes</p>
+        {%endfor%}
+
+    </body>
+</html>

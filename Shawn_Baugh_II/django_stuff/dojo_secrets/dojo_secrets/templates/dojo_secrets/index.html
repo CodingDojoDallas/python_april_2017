@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>Welcome to Secrets. #keepitquiet</h1>
+        {%for message in messages%}
+            {{message}}
+        {%endfor%}
+        <form class="register" action="/process" method="post">
+            {% csrf_token %}
+            <h3>Register Today(Then login to experience the secrets)</h3>
+            First Name:
+            <input type="text" name="first_name" placeholder="First Name">
+            Last Name:
+            <input type="text" name="last_name" placeholder="Last Name">
+            Email:
+            <input type="text" name="email" placeholder="Email">
+            Password:
+            <input type="text" name="password" placeholder="Password">
+            Confirm Password:
+            <input type="text" name="confirm_password" placeholder="Confirm Password">
+            <input type="submit" value="Register">
+        </form>
+
+        <form class="login" action="login" method="post">
+            {% csrf_token %}
+            <h3>Login</h3>
+            Email:
+            <input type="text" name="email" placeholder="Email">
+            Password:
+            <input type="text" name="password"  placeholder="Password">
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>

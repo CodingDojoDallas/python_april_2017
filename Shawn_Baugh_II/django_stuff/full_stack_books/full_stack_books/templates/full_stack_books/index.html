@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Books</title>
+    </head>
+    <body>
+
+        <h1>You'll Have Books Below</h1>
+        <div class="books">
+            {%for book in books%}
+                <h4>Title: {{book.title}} | Category: {{book.category}} | Author: {{book.author}}</h4>
+            {%endfor%}
+        </div>
+        <h2>Add A Book</h2>
+        <form class="add_book" action="create_book" method="post">
+            {% csrf_token %}
+            Title:
+            <input type="text" name="title" placeholder="Title">
+            Category:
+            <input type="text" name="category" placeholder="Category">
+            Author:
+            <input type="text" name="author" placeholder="Author">
+            <input type="submit" value="Push It Real Good">
+        </form>
+    </body>
+</html>

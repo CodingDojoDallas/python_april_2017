@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Courses</title>
+    </head>
+    <body>
+        <h1>Add a New Course</h1>
+        <form class="new_course" action="/add_course" method="post">
+            {% csrf_token %}
+            Name:
+            <input type="text" name="name" placeholder="Name">
+            Description:
+            <input type="text" name="description" placeholder="Description">
+            <input type="submit" value="Add It">
+        </form>
+
+        <div class="courses">
+            <h4>Courses</h4>
+            <div class="courses_table">
+                {%for course in courses%}
+                <p>Name: {{course.name}} | Description: {{course.description}} | Date Added: {{course.created_at}}</p>
+                <a href="/remove_page/{{course.id}}"><button>remove course </button></a>
+                {%endfor%}
+            </div>
+
+        </div>
+    </body>
+</html>
