@@ -1,0 +1,15 @@
+#register {
+	border:2px black solid;
+	width: 340px;
+	padding: 10px;
+}
+
+#register input {
+	margin:10px;
+	width: 80%;
+	clear: both;
+}
+
+
+	
+	

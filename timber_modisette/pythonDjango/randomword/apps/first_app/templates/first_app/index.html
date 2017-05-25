@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Random Number Game</title>
+		<meta charset="utf-8">
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'css/stylesheet.css' %}"media="screen" title="no title"  charset="utf-8">
+	</head>
+	<body>
+		<h1>random word generator</h1>
+		<h4>random word (attempt #{{request.session.attempts}})</h4>
+		<div>
+			{{request.session.randomword}}
+		</div>
+		<form action="/randomWord" method="POST">
+			{% csrf_token %}
+			<input type="submit" name="randomWordButton" value="Submit">
+			
+		</form>		
+		<form action="/popAttempts" method="POST">
+			{% csrf_token %}
+			<input type="submit" name="reset_button" value="Reset">
+		</form>
+	</body>
+</html>

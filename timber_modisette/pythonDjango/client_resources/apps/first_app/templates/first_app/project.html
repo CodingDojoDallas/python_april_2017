@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>{{project.title}}</h1>
+	<h3>Project Notes:</h3>
+	{% for i in project.notes.all %}
+	<p><a href="/deleteNote/{{i.id}}">Delete</a> {{i.id}}</p>
+	<p></p>
+	<button><a href="/">Back</a></button>
+	{% endfor %}
+	{{project.i}}
+	<form action="/addnote{{project.id}}" method="POST">
+		{% csrf_token %}
+		<label for="add_note">Add Note: <textarea name="add_note"></textarea></label>
+		<input type="submit" name="add_note_button">
+	</form>
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{message}}</p>
+		{% endfor %}
+	{% endif %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Project</title>
+</head>
+<body>
+	<h1>Add Project</h1>
+	<p>{{clientid}}</p>
+	<form action="/addproject{{clientid}}" method="POST">
+		{% csrf_token %}
+		<label for="project_name">Project Name: <input type="text" name="project_name"></label>
+		<label for="notes">Notes: <textarea name="notes"></textarea></label>
+		<input type="submit" name="project_button">
+	</form>
+	{% if messages %}
+		{% for message in messages %}
+			<p>{{message}}</p>
+		{% endfor %}
+	{% endif %}
+</body>
+</html>

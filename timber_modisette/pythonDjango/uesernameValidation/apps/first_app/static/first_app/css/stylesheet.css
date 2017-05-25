@@ -1,0 +1,17 @@
+body {
+	color: pink;
+}
+
+.error {
+	width: 300px;
+	height: 60px;
+	background-color: red;
+	color: black;
+	text-align: center;
+
+}
+
+.error p {
+	font-size: 20px;
+	line-height: 60px;
+}

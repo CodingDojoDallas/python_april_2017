@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Favourites</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'dojo_secrets/css/stylesheet.css' %}">
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Most Popular Likes!</h1>
+	<a href="/secrets">Home</a>
+	<a href="/logout">Logout</a>
+
+
+
+	{% for secret in secrets %}
+			<p>{{secret.content}} {{secret.created_at}}</p>
+		
+		
+		
+		{% if secret.user == current_user %}
+			<h4>You posted this</h4>
+			<a href="/deletesecrets/{{secret.id}}">Delete</a>
+		{% endif %}
+
+		{% for user in secret.likes.all %}
+			{% if user == current_user %}
+				<p>You liked this</p>
+			{% endif%}
+		{% endfor %}
+
+		{% if current_user != secret.user %}
+		<a href="/likeonFavs/{{secret.id}}">like</a> {{secret.likes.all | length }}
+		{% endif %}
+
+	{% endfor %}
+</body>
+</html>

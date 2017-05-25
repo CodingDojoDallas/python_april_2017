@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Course Remove Page</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'first_app/css/stylesheet.css' %}">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Are you sure you want to remove the following course</h1>
+		<h3>Course Name: {{description.course.name}}</h3>
+		<h3>Description: {{description.content}}</h3>
+		<form action="/">
+			{% csrf_token %}
+			<input type="submit" name="no_button" value="no">
+		</form>
+
+		<form action="/delete/{{description.id}}" method="POST">
+			{% csrf_token %}
+			<input type="submit" name="yes_button" value="yes">
+		</form>
+
+		</form>
+	</body>
+</html>

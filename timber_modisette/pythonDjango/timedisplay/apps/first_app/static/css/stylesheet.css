@@ -1,0 +1,19 @@
+body div:nth-child(1){
+	color: pink;
+	border:2px solid black;
+	width: 250px;
+	height: 40px;
+	text-align: center;
+	line-height: 6px;
+	margin-left: 544px;
+	margin-bottom: 50px;
+}
+
+body div:nth-child(2){
+	border:2px solid red;
+	width: 450px;
+	height: 131px;
+	text-align: center;
+	margin-left: 450px;
+}
+

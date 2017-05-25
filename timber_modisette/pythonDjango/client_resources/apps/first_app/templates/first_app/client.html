@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Client</title>
+</head>
+<body>
+	<h1>{{client.name}}</h1>
+	<h3>Projects</h3>
+	{% for i in client.projects.all %}
+	<ul><a href="/project/{{i.id}}">{{i.title}}</a></ul>
+	{% endfor %}
+	<h3>Contact</h3>
+	<ul>Email: {{client.email}}</ul>
+	<ul>Phone: {{client.phone}}</ul>
+
+	<h3>Notes:</h3>
+	<p>injection</p>
+	<button><a href="/">Home</a></button>
+	<button><a href="/showaddproject/{{client.id}}">Add project</a></button>
+</body>
+</html>

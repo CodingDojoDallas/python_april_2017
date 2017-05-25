@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Client List</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Clients:</h1>
+	<table>
+		<tr>
+			<th>Business Name</th>
+			<th>Email</th>
+			<th>Phone #</th>
+		</tr>
+			{% for i in clients %}
+		<tr>
+				<td>{{i.name}}</td>
+				<td>{{i.email}}</td>
+				<td>{{i.phone}}</td>
+			{% endfor %}
+		</tr>
+	</table>
+	<button><a href="/Showaddclient">Add Client</a></button>
+</body>
+</html>

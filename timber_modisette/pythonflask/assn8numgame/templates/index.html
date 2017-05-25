@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>count game</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/stylesheet.css')}}">
+	</head>
+	<body>
+
+		<form action="/userguess" method="post">
+		<h1>Welcome To The Great Number Game!</h1>
+		<h3>I am thinking of a number between 1 and 100.</h3>
+		<h4>Take a guess</h4>
+		<div id="onlybox" class="{{ session['userinput'] }}">
+			<p>{{session['userinput']}}</p>
+		</div>	
+		<input id='textbox' type="number" name="textbox">
+		<input id='button1' type="submit" name="button">
+		</form>
+		{% if session['userinput'] == "accurate" %}
+			<form id="lastform" action="/reset" method="post">
+				<input id="lastbutton" type="submit" name="PlayAgain">
+			</form>
+		{% endif %}
+
+
+	</body>
+</html>

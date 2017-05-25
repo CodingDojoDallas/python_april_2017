@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ninja turtles</title>
+	</head>
+	<body>
+		{% if displayall == True %}
+			<img src="{{url_for('static',filename='orange.jpg')}}">
+			<img src="{{url_for('static',filename='red.jpg')}}">
+			<img src="{{url_for('static',filename='blue.jpg')}}">
+			<img src="{{url_for('static',filename='purple.jpg')}}">
+		{% endif %}
+		{% if displayall == False %}	
+			{% if color == 'blue'%}
+				<img src="{{url_for('static',filename='blue.jpg')}}">
+			{% elif color == 'red'%}
+				<img src="{{url_for('static',filename='red.jpg')}}">
+			{% elif color == 'purple'%}
+				<img src="{{url_for('static',filename='purple.jpg')}}">
+			{% elif color == 'orange'%}
+				<img src="{{url_for('static',filename='orange.jpg')}}">
+			{% elif color == 'all' %}
+				<img src="{{url_for('static',filename='tmnt.png')}}">
+			{% else %}
+				<p>trying to display April</p>
+				<img src="{{url_for('static',filename='notapril.jpg')}}">
+			{% endif %}
+		{% endif %}
+	</body>
+</html>

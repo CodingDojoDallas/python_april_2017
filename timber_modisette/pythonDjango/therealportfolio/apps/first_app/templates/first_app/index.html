@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome Page</title>
+		<meta charset="utf-8">
+		{% load staticfiles %}
+			<link rel="stylesheet" href="{% static 'css/stylesheet.css' %}"media="screen" title="no title"  charset="utf-8">
+	</head>
+	<body>
+		<h1>Hi, {{request.session.name}}</h1>
+		<!-- do not overuse session. really only a name and maybe a database id should be stored in session -->
+		<h2>Welcome to my portfolio</h2>
+		<a href="projects">Projects</a>
+		<a href="aboutme">About Me</a>
+		<a href="testimonials">Testimonials</a>
+		<p></p>
+
+		<div class="box">
+			<p>I have done many a project.</p>
+		</div>
+		<div class="box">
+			<p>This is my about me.</p>
+		</div>
+		<div class="box">
+			<p>give me a testie!</p>
+		</div>
+		<form action="/newuser" method="POST">
+			{% csrf_token %}
+			<label for="first_name">First Name:<input type="text" name="first_name"></label>
+			<input type="submit" name="newuser_button" value="Submit">
+
+		</form>
+		
+
+	</body>
+</html>

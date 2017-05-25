@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test embedded</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<h3>My flask template with embedded python-like code</h3>
+
+		<p>Phrase: {{ phrase }}</p>
+
+		<p>Times: {{ times }}</p>
+
+		{% for x in range(0,times): %}
+
+		<p>{{ phrase }}</p>
+
+		{% endfor %}
+
+		{% if phrase == "hello" %}
+		<p>the phrase says hello</p>
+		{% endif %}
+	
+
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Username Validation</title>
+		<meta charset="utf-8">
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'first_app/css/stylesheet.css' %}">
+	</head>
+	<body>
+		<form action="/process" method="POST">
+			{% csrf_token %}
+			<label for="username">Username: <input type="text" name="username"></label>
+			<input type="submit" name="user_button">
+		</form>
+		{% if messages %}
+			{% for message in messages%}
+				<div class="error"><p>{{message}}</p></div>
+			{% endfor %}
+		{% endif %}
+	</body>
+</html>

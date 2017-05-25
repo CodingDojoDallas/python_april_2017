@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gold Ninja's!</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/stylesheet.css')}}">
+
+	</head>
+	<body>
+		<h3>Your Gold: </h3>
+		<form id="one">
+			<input type="text" name="my_gold" value="{{session['gold']}}">
+		</form>
+
+		<div class="box">
+			<h1>Farm</h1>
+			<p>(earns 10-20 golds)</p>
+			<form action="/processmoney" method="post">
+				<input type="hidden" name="action" value="1020">
+				<input type="submit" name="farmgold" value="Find Gold">
+			</form>
+		</div>
+
+		<div class="box">
+			<h1>Cave</h1>
+			<p>(earns 5-10 golds)</p>
+			<form action="/processmoney" method="post">
+				<input type="hidden" name="action" value="0510">
+				<input type="submit" name="cavegold" value="Find Gold">
+			</form>
+		</div>
+
+		<div class="box">
+			<h1>House</h1>
+			<p>(earns 2-5 golds)</p>
+			<form action="/processmoney" method="post">
+				<input type="hidden" name="action" value="0205">
+				<input type="submit" name="housegold" value="Find Gold">
+			</form>
+		</div>
+
+		<div class="box">
+			<h1>Casino</h1>
+			<p>(earns/takes 0-50 golds)</p>
+			<form action="/processmoney" method="post">
+				<input type="hidden" name="action" value="050">
+				<input type="submit" name="casinogold" value="Find Gold">
+			</form>
+		</div>
+		<h4>Avtivities: </h4>
+		<div id="displayDIV">
+			<!-- {{session['activities']}} -->
+			{% for activity in session['activities'] %}
+				{% if activity['color'] == 'green' %}
+					<p id='green'>{{activity.message}}</p>
+				{% endif %}
+
+				{% if activity['color'] == 'red' %}
+				<p id="red">{{activity.message}}</p>
+				{% endif %}
+			{% endfor %}
+		</div>
+		{% if session['gold'] == "You Have Won!" %}
+			<div id="winner">
+			<h1 id="win">{{session['gold']}}</h1>
+			<form action="/processmoney" method="post">
+				<input type="hidden" name="action" value="resetbutton">
+				<input type="submit" name="reset" value="Play Again">
+			</form>
+			</div>
+		{% endif %}
+
+		{% if session['gold'] == "You Have Lost!" %}
+			<div id="loser">
+			<h1 id="lost">{{session['gold']}}</h1>
+			<form action="/processmoney" method="post">
+				<input type="hidden" name="action" value="resetbutton2">
+				<input type="submit" name="reset2" value="Try Again">
+			</form>
+			</div>
+		{% endif %}
+
+
+	</body>
+</html>
+
+
+
+
+
+

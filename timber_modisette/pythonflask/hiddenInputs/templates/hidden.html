@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hidden Inputs</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form method="post" action="/process">
+            <input type="hidden" name="action" value="register">
+            <input type="text" name="first_name">
+            <input type="text" name="last_name">
+            <input type="text" name="email">
+            <input type="password" name="password">
+            <input type="submit" value="Register">
+        </form>
+        <form method="post" action="/process">
+            <input type="hidden" name="action" value="login">
+            <input type="text" name="email">
+            <input type="password" name="password">
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>

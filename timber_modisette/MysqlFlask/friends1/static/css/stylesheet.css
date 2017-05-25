@@ -1,0 +1,15 @@
+*{
+	margin: 0px;
+	padding: 20px;
+}
+
+
+
+h1 {
+	color: pink;
+	margin: 0px;
+}
+
+th {
+	border:2px solid black;
+}

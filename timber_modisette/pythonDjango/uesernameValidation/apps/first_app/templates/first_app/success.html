@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>success</title>
+		{% load staticfiles %}
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>You made it here</h1>
+		{% for users in username %}
+			<p>{{users.username}}  <a href="/remove{{users.id}}">Remove</a></p>
+			<p>{{users.created_at}}</p>
+		{% endfor %}
+	</body>
+</html>
+

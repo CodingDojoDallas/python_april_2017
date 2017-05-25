@@ -1,0 +1,15 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+form {
+	border:2px solid black;
+	width: 300px;
+	height: 60px;
+	font-size: 30px;
+	margin: 30px 0px 0px 30px;
+	padding: 10px;
+
+}
+

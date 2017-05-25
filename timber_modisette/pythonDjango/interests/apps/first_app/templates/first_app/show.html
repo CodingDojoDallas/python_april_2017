@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>show</title>
+		<meta charset="utf-8">
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'first_app/css/stylesheet.css' %}">
+	</head>
+	<body>
+		<div>
+		<table>
+			<tr>
+    			<th>User Name</th>
+    			<th>Action</th> 
+  			</tr>
+
+  			{% for i in users %}
+  			<tr>
+  				<td>{{i.name}}</td>
+  				<td><a href="/userProfile/{{i.id}}">View</a></td>
+  			</tr>
+  			{% endfor %}
+  		</table>
+  			<a href="/">Enter another user interest</a>
+		</div>
+	</body>
+</html>

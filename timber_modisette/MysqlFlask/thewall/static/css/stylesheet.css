@@ -1,0 +1,17 @@
+body {
+	color:lightblue;
+}
+
+.messageBox {
+
+	border: 2px solid black;
+	margin: 15px;
+	width: 500px;
+	height: 200px;
+	overflow: scroll;
+
+}
+
+.showmessage {
+	color: black;
+}
