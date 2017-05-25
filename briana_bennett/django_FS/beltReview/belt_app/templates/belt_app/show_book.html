@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book</title>
+</head>
+<body>
+	<a href="/books">Home</a>
+	<a href="/logout">logout</a>
+	<h1>{{book.title}}</h1>
+	<p>by: {{book.author.name}}</p>
+	<h3>Reviews:</h3>
+	{% for review in reviews %}
+		<p>{{review.rating}} out of 5<p>
+		<a href="/users/{{review.user.id}}">{{review.user.first_name}}</a> - {{review.review}}<p>
+		<p>{{review.created_at}}<p>
+		{% if review.user == current_user %}
+			<a href="/delete/{{review.id}}">Delete this Review</a>
+		{% endif %}
+		<hr>
+	{% endfor %}
+	<p>Add a Review:</p>
+	<form action="/reviews/{{book.id}}" method="post">
+	{% csrf_token %}
+		<label>Review:</label>
+		<textarea name = "review"></textarea>
+		<label>Rating:</label>
+		<select name = "rating">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<input type="submit" value="Submit Review">
+	</form>
+</body>
+</html>

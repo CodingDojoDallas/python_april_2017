@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Username Validation</title>
+</head>
+<body>
+	<div>
+		{% if messages %}
+			{% for message in messages%}
+			<p class="error">{{message}}</p>
+			{%endfor%}
+		{% endif %}
+	</div>
+	<form action="/users" method="post">
+		{% csrf_token %}
+		<label>Username:</label>
+		<input type="text" name="username">
+		<input type="submit" value="submit">
+	</form>
+
+</body>
+</html>

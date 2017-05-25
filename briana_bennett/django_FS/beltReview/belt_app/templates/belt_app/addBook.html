@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book</title>
+</head>
+<body>
+	<h1>Add a New Book Title and a Review</h1>
+	<form action="/books/add" method='post'>
+		{% csrf_token %}
+		<label>Book Title:</label>
+		<input type="text" name="title">
+		<label>Author:</label>
+		<label>Choose from the list</label>
+		<select name = select_author>
+		  <option value="Jane Austen">Jane Austen</option>
+		  <option value="The Grimm Brothers">The Grimm Brothers</option>
+		  <option value="Dave Pelzer">Dave Pelzer</option>
+		</select>
+		<label>Or add a new author</label>
+		<input type="text" name="add_author">
+		<label>Review:</label>
+		<textarea name = "review"></textarea>
+		<label>Rating:</label>
+		<select name = "rating">
+		  <option value="1">1</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		  <option value="5">5</option>
+		</select>
+		<input type="submit" value="Add Book and Review">	
+	</form>
+</body>
+</html>
