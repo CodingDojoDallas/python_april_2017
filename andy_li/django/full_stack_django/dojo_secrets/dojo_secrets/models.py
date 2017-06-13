@@ -47,6 +47,24 @@ class UserManager(models.Manager):
             liked_post_ids.append(post.id)
 
         return liked_post_ids
+
+
+class PostManager(models.Manager):
+    def validatePost(self, post_data):
+        # verify if post is blank
+        if len(post_data["post"]) < 1:
+            return {"pass": False, "errors": "Post can't be blank."}
+
+        return {"pass": True, "errors": None}
+
+
+class CommentManager(models.Manager):
+    def validateComment(self, post_data):
+        # verify if comment is blank
+        if len(post_data["comment"]) < 1:
+            return {"pass": False, "errors": "Comment can't be blank."}
+
+        return {"pass": True, "errors": None}
         
 
 class User(models.Model):
@@ -62,14 +80,6 @@ class User(models.Model):
         return "First name: {}, Last name: {}, e-mail: {}, Password: {}".format(self.first_name, self.last_name, self.email, self.password)
 
 
-class PostManager(models.Manager):
-    def validatePost(self, post_data):
-        # verify if post is blank
-        if len(post_data["post"]) < 1:
-            return {"pass": False, "errors": "Post can't be blank."}
-
-        return {"pass": True, "errors": None}
-
 class Post(models.Model):
     post = models.TextField()
     user = models.ForeignKey(User, related_name = "posts")
@@ -81,14 +91,6 @@ class Post(models.Model):
     def __str__(self):
         return "Post: {}".format(self.post)
 
-
-class CommentManager(models.Manager):
-    def validateComment(self, post_data):
-        # verify if comment is blank
-        if len(post_data["comment"]) < 1:
-            return {"pass": False, "errors": "Comment can't be blank."}
-
-        return {"pass": True, "errors": None}
 
 class Comment(models.Model):
     comment = models.TextField()

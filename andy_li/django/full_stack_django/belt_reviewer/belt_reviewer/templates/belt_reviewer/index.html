@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Welcome | Login & Reg</title>
-  </head>
-  <body>
-    <div class="container">
-      <h2>Hi Belt Reviewer!</h2>
-    </div>
+<head>
+  <title>Welcome | Login & Reg</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static '/belt_reviewer/css/style1.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome!</h2>
+    <h3>Register</h3>
+    <form action='/users/create' method='POST'>
+      {% csrf_token %}
+      <label for="name">Name:<input type="text" name="name" id="name"></label>
+      <label for="alias">Alias:<input type="text" name="alias" id="alias"></label>
+      <label for="email">Email:<input type="text" name="email" id="email"></label>
+      <label for="password">Password:<input type="password" name="password" id="password"></label>
+      <label for="confirm_pwd">Confirm Password:<input type="password" name="confirm_pwd" id="confirm_pwd"></label>
+      <label for="birthdate">Birthdate:<input type="date" name="birthdate" id="birthdate"></label>
+      <input type="submit" value="Register">
+    </form>
 
-  </body>
+    <h3>Login</h3>
+    <form action="/login" method='POST'>
+      {% csrf_token %}
+      <label for="email">Email:<input type="text" name="email" id="email"></label>
+      <label for="password">Password:<input type="password" name="password" id="password"></label>
+      <input type="submit" value="Login">
+    </form>
+      {% if messages %}
+        {% for msg in messages %}
+          <p class="flash_msg">{{ msg }}</p>
+        {% endfor %}
+      {% endif %}
+  </div>
+</body>
 </html>

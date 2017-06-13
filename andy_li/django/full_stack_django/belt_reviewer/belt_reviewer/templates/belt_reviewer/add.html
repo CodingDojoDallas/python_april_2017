@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Add Book and Review</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/belt_reviewer/css/style1.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <a href="/books">Home</a>
+      <a href="/logout">Logout</a>
+
+      <h3>Add a New Book and Review</h3>
+      <form action="/books/create" method="post">
+        {% csrf_token %}
+        <label>Book Title: <input type="text" name="title" placeholder="Book Title"></label>
+        <label>Author: Choose from list: <select name="author">
+            <option>Homer</option>
+            <option selected>JRR Tolkien</option>
+            <option>Mark Twain</option>
+            {% for author in authors %}
+
+            <option>{{ author.name }}</option>
+            {% endfor %}
+          </select> Or add a new author: <input type="text" name="author_new" placeholder="Author">
+        </label>
+        <label>Review: <textarea name="review" rows="5" cols="50"></textarea></label>
+        <label>Rating: <select name="rating">
+            <option selected>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select> stars.
+        </label>
+        <input type="submit" value="Add Book and Review">
+      </form>
+
+      {% if messages %}
+        {% for msg in messages %}
+          <p class="flash_msg">{{ msg }}</p>
+        {% endfor %}
+      {% endif %}
+      
+    </div>
+
+  </body>
+</html>

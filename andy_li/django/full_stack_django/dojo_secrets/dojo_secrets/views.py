@@ -4,9 +4,6 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from models import *
 from django.db.models import Count
-from datetime import datetime
-import pytz
-utc = pytz.utc
 
 def current_user(request):
     return User.objects.get(id = request.session["user_id"])
@@ -69,7 +66,6 @@ def secrets(request):
     data = {
         "current_user": current_user(request),
         "posts": Post.objects.select_related("user").all().order_by("-created_at")[:5],
-        "current_datetime": datetime.now(tz = utc),
         "liked_post_ids": User.objects.likedPost_ids(current_user(request)),
     }
 

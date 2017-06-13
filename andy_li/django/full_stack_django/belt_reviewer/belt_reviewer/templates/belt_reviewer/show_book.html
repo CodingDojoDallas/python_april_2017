@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Book with Reviews</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/belt_reviewer/css/style1.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <a href="/books">Home</a>
+      <a href="/logout">Logout</a>
+
+      <h3>{{ book.title }}</h3>
+      <p>Author: {{ book.author.name }}</p>
+
+      <h3>Reviews</h3>
+      {% for review in reviews %}
+        <p>Rating: {{ review.rating }}</p>
+        <p><a href="/users/{{ review.user.id }}">{{ review.user.name }}</a> says: {{ review.review }}</p>
+        <p>Posted on {{ review.created_at }}</p>
+
+        {% if review.user.id == current_user.id %}
+          <a href="/reviews/delete/{{ review.id }}">Delete this review</a>
+        {% endif %}
+      {% endfor %}
+
+      <form action="/reviews/create/{{ book.id }}" method="post">
+        {% csrf_token %}
+        <label><h3>Add a Review:</h3><textarea name="review" rows="5" cols="50"></textarea></label>
+        <label>Rating: <select name="rating">
+            <option selected>5</option>
+            <option>4</option>
+            <option>3</option>
+            <option>2</option>
+            <option>1</option>
+          </select> stars.
+        </label>
+        <input type="submit" value="Submit Review">
+      </form>
+
+      {% if messages %}
+        {% for msg in messages %}
+          <p class="flash_msg">{{ msg }}</p>
+        {% endfor %}
+      {% endif %}
+      
+    </div>
+
+  </body>
+</html>
