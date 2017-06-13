@@ -25,6 +25,18 @@ https://codingdojo-dallas.slack.com/files/katemoc/F427ZQZPY/github_workflow_v4.p
 [Python OOP - Deck of Cards](https://youtu.be/INHEo8Nn4ds "Python OOP - Deck of Cards") <br>
 [Python Flask - Ninja Gold](https://youtu.be/TkMS86lvOFY "Python Flask - Ninja Gold") <br>
 [Python Django - Landscapes](https://www.youtube.com/watch?v=ngirFK-hFfg "Python Django - Landscapes") <br>
+[Python Django - Login & Registration](https://www.youtube.com/watch?v=22uUcUXQqBU "Python Django - Login & Registration") <br>
+[Python Django - Login & Registration](https://www.youtube.com/watch?v=22uUcUXQqBU "Python Django - Login & Registration") <br>
+[Python Django - Posts, Comments, w/ Likes ](https://www.youtube.com/watch?v=ruPYiW5pWPs "Python Django - Posts, Comments, w/ Likes ") <br>
+[Python Django - Dojo Secrets](https://www.youtube.com/watch?v=7J7Kker3EsY "Python Django - Dojo Secrets") <br>
+[Python Django - Belt Reviewer](https://www.youtube.com/watch?v=FsoeskB4x3c "Python Django - Belt Reviewer") <br>
+[Python Django - Deployment](https://www.youtube.com/watch?v=RAZZ1fyN4mQ "Python Django - Deployment") <br>
+
+
+
+
+
+
 
 
 
