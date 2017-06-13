@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey Index</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+	<div class ='result'>
+		<h1>Submitted Info</h1>
+		<p>Name: {{session['name']}}</p>
+		<p>Dojo Location: {{ session['location'] }}</p>
+		<p>Favorite Language: {{ session['language'] }}</p>
+		<p>Comment: {{ session['comment'] }}</p>
+		<a href='/reset'><input type='button' value='Go Back'></a>
+	</div>
+</body>
+</html>

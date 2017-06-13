@@ -1,0 +1,23 @@
+body {
+	width: 900px;
+	text-align: center;
+}
+
+div.abovebelow {
+	width: 240px;
+	height: 140px;
+	background-color: red;
+	color: white;
+	font-size: 200%;
+	padding-top: 80px;
+	margin: auto;
+}
+
+div.onthemoney {
+	width: 240px;
+	height: 200px;
+	padding-top: 30px;
+	color: white;
+	background-color: green;
+	margin: auto;
+}

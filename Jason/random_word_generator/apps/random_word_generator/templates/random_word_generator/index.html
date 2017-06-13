@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Word Generator</title>
+</head>
+<body>
+	{% if request.session.word %}
+	<h3>Random (attempt #{{ request.session.count }})</h3>
+	{% endif %}
+	<h1>{{ request.session.word }}</h1>
+	<form action='wordgenerate' method='get'>
+		<input type="submit" name="Generate">
+	</form>
+</body>
+</html>

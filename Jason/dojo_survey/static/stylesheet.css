@@ -1,0 +1,32 @@
+body {
+	width: 900px;
+	text-align: center;
+
+}
+
+.box {
+	width: 500px;
+	height: 380px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify-all;
+	padding-top: 20px;
+	margin: auto;
+	border: 1px solid black;
+	font-size:130%;
+}
+
+.reset {
+	width: 500px;
+	height: 380px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify-all;
+	padding-top: 20px;
+	margin: auto;
+	border: 1px solid black;
+	font-size:130%;	
+}
+
+
+	

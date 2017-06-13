@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h3>Your Gold: <span>GOLD FROM SESSION</span></h3>
+			<a href='/reset'>Reset</a>
+		</div>
+		<div class="row">
+			<div class="box">
+				<h5>Farm</h5>
+				<p>(earns 10 - 20 golds)</p>
+				<form action="/play" method="post">
+					<input type="hidden" name="location" value="farm">
+					<input type="submit" value="Find Gold">
+				</form>
+			</div>
+			<div class="box">
+				<h5>Cave</h5>
+				<p>(earns 5 - 10 golds)</p>
+				<form action="/play" method="post">
+					<input type="hidden" name="location" value="cave">
+					<input type="submit" value="Find Gold">
+				</form>
+			</div>
+			<div class="box">
+				<h5>House</h5>
+				<p>(earns 2 - 5 golds)</p>
+				<form action="/play" method="post">
+					<input type="hidden" name="location" value="house">
+					<input type="submit" value="Find Gold">
+				</form>
+			</div>
+			<div class="box">
+				<h5>Casino</h5>
+				<p>(earns 0 - 50 golds)</p>
+				<form action="/play" method="post">
+					<input type="hidden" name="location" value="casion">
+					<input type="submit" value="Find Gold">
+				</form>
+			</div>
+		</div><!--end of row-->
+		<div class="row">
+			<h5>Activities</h5>
+			<div class="activities">
+			{% for activity in session['activities'] %}
+				<p class="{{activity['color']}}">{{activity['message']}}</p>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

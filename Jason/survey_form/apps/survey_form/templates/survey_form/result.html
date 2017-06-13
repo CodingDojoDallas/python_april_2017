@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+</head>
+<body>
+	<p>Thank for submitting this form! You have sumbitted this form {{request.session.times}} times now.</p>
+	<div>
+		<p>Sumbitted Information</p>
+		<div>
+			<label>Name:</label>
+			<p>{{request.session.name}}</p>
+			<label>Dojo Location:</label>
+			<p>{{request.session.location}}</p>
+			<label>Favorite Language:</label>
+			<p>{{request.session.language}}</p>
+			<label>Comment:</label>
+			<p>{{request.session.comment}}</p>
+		</div>
+	</div>
+</body>
+</html>
